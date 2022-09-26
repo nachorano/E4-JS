@@ -16,12 +16,14 @@ const searchCard = async e => {
   if (!valueInput.length) return errorInput.innerHTML = `<small>Ingresar ID para buscar</small>` ;
   if (valueInput == 0) {
       errorInput.innerHTML = `<small>El ID debe ser distinto de cero</small>` ;
+      
       return ;
-  }
-
-  if(Math.sign(valueInput)=== -1){
+  } else if(Math.sign(valueInput)=== -1){
       errorInput.innerHTML = `<small>El ID ingresado no puede ser negativo</small>` ;
+      
       return; 
+  } else{
+    errorInput.innerHTML =" ";
   }
 
   const fetchedCard = await getPokemon(valueInput);
@@ -66,7 +68,7 @@ const searchCard = async e => {
   
   card.classList.add('flip-in-ver-right')
   setTimeout(()=>card.classList.remove('flip-in-ver-right'),500)
-  
+   
   }
 }
 
