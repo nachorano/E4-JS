@@ -250,6 +250,11 @@ i {
   }
 
   .error-input{
+    display: flex;
+    justify-content: center;
+  }
+
+  .error-input small{
     margin-top: 20px;
    padding: 15px;
    background-color: #C21010;
